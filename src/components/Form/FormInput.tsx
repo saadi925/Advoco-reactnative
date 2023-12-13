@@ -1,6 +1,7 @@
 import React, {ReactElement, useState} from 'react';
 import {TextInput, StyleSheet} from 'react-native';
 import {Box} from '..';
+import {COLORS} from '../../constants/Theme';
 
 interface InputProps {
   placeholder?: string;
@@ -10,6 +11,7 @@ interface InputProps {
   secureTextEntry?: boolean;
   keyboardType?: 'default' | 'numeric' | 'email-address';
   icon?: ReactElement;
+  bgColor?: string;
 }
 
 export const FormInput: React.FC<InputProps> = ({
@@ -20,6 +22,7 @@ export const FormInput: React.FC<InputProps> = ({
   secureTextEntry,
   keyboardType,
   icon,
+  bgColor = '#000',
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -34,7 +37,7 @@ export const FormInput: React.FC<InputProps> = ({
         width={'100%'}
         borderWidth={1}
         borderRadius={5}
-        backgroundColor={'#222'}
+        backgroundColor={bgColor}
         style={isFocused ? styles.focused : styles.unFocused}>
         <TextInput
           style={styles.input}
@@ -62,10 +65,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     borderRadius: 8,
     fontWeight: '500',
-    backgroundColor: '#222',
+    backgroundColor: COLORS.background,
   },
   focused: {
-    borderColor: 'red',
+    borderColor: COLORS.primary,
     borderWidth: 1,
     borderRadius: 8,
   },

@@ -20,9 +20,6 @@ export const Header = ({navigation}) => {
           <SearchIcon fill={COLORS.text} />
         </Pressable>
         <Pressable onPress={() => console.log('menu')}>
-          <NotificationIcon fill={COLORS.text} />
-        </Pressable>
-        <Pressable onPress={() => console.log('menu')}>
           <ChatIcon fill={COLORS.icon} />
         </Pressable>
 

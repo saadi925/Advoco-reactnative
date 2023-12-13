@@ -4,6 +4,7 @@ import {AppText, Box, FormInput} from '../components';
 import {UserIcon} from '../../assets/UserIcon';
 import {SCREENS} from '../constants/Screens';
 import {LockIcon} from '../../assets/LockIcon';
+import {COLORS} from '../constants/Theme';
 export function LoginScreen({navigation}) {
   return (
     <Box paddingTop={'50%'} flex={1}>
@@ -23,21 +24,21 @@ export function LoginScreen({navigation}) {
           style={{
             paddingHorizontal: '5%',
             paddingVertical: '2%',
-            backgroundColor: 'skyblue',
+            backgroundColor: COLORS.primary,
             borderRadius: 8,
           }}>
           <AppText
             fontSize={22}
             textAlign="center"
             fontWeight="700"
-            text="Signup"
+            text="Signin"
           />
         </Pressable>
 
         <Box flexDirection="row" gap={5}>
-          <AppText text="Already have an account" />
+          <AppText fontSize={18} text="Already have an account ?" />
           <Pressable onPress={() => navigation.navigate(SCREENS.Signup)}>
-            <AppText text="Signup" color="blue" />
+            <AppText text="Signup" fontSize={18} color={COLORS.accent} />
           </Pressable>
         </Box>
       </Box>

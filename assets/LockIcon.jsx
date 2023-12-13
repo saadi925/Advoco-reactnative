@@ -16,7 +16,7 @@ export function LockIcon({size = 32, fill = '#000'}) {
       xmlSpace="preserve">
       <Path
         fill="none"
-        stroke="#000"
+        stroke="#fff"
         strokeMiterlimit="10"
         strokeWidth="2"
         d="M14.5 2.5A5.5 5.5 0 0 1 20 8v4.5H9V8a5.5 5.5 0 0 1 5.5-5.5z"></Path>

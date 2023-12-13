@@ -5,7 +5,7 @@ import {SearchIcon} from '../../assets/Search';
 export function SearchInput() {
   return (
     <Box>
-      <FormInput icon={<SearchIcon />} />
+      <FormInput placeholder="Search here" icon={<SearchIcon />} />
     </Box>
   );
 }
