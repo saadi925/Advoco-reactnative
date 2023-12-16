@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     borderRadius: 8,
     fontWeight: '500',
+    color: COLORS.text,
     backgroundColor: COLORS.background,
   },
   focused: {

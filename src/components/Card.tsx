@@ -1,6 +1,6 @@
 import {AppText, Box} from '.';
 
-export default function Card({item}) {
+export function Card({item}) {
   return (
     <Box>
       <AppText text={item.value} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import {AppText, Box} from '../components';
 import {COLORS} from '../constants/Theme';
+import {NotificationListing} from '../components/NotificationListing';
 
 export default function NotificationsScreen() {
   return (
@@ -8,13 +9,11 @@ export default function NotificationsScreen() {
       <AppText
         textAlign="center"
         text="Notifications"
-        padding={4}
         fontWeight="800"
-        paddingTop={7}
-        paddingHorizontal={12}
         color={COLORS.primary}
         fontSize={24}
       />
+      <NotificationListing />
     </Box>
   );
 }

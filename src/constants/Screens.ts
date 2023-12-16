@@ -5,7 +5,9 @@ export const SCREENS = {
   Signup: 'Signup',
   Search: 'Search',
   Rankings: 'Rankings',
+  Requests: 'Requests',
   Notifications: 'Notifications',
+  Menu: 'menu',
 };
 export const STACKS = {
   AUTH: 'Auth',

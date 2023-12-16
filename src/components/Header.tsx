@@ -14,7 +14,7 @@ export const Header = ({navigation}) => {
       justifyContent="space-between"
       alignItems="center"
       padding={'3%'}>
-      <Text style={styles.logo}>Advoco</Text>
+      <AppText fontWeight="bold" fontSize={24} text="Advoco" />
       <Box flexDirection="row" gap={8} alignItems="center">
         <Pressable onPress={() => navigation.navigate(SCREENS.Search)}>
           <SearchIcon fill={COLORS.text} />
@@ -22,21 +22,7 @@ export const Header = ({navigation}) => {
         <Pressable onPress={() => console.log('menu')}>
           <ChatIcon fill={COLORS.icon} />
         </Pressable>
-
-        <Pressable onPress={() => console.log('menu')}>
-          <UserAvatar isOnline />
-        </Pressable>
       </Box>
     </Box>
   );
 };
-
-const styles = StyleSheet.create({
-  logo: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  menu: {
-    fontSize: 24,
-  },
-});

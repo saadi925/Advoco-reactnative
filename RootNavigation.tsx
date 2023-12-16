@@ -13,12 +13,15 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {Header} from './src/components/Header';
 import Rankings from './src/screens/Rankings';
-import {UserIcon} from './assets/UserIcon';
+import {UserIcon, UsersIcon} from './assets/UserIcon';
 import {COLORS} from './src/constants/Theme';
 import {HomeIcon} from './assets/Home';
 import {NotificationIcon} from './assets/NotificationIcon';
 import NotificationsScreen from './src/screens/NotificationsScreen';
 import {LocationIcon} from './assets/Location';
+import {MenuIcon} from './assets/MenuIcon';
+import {MenuScreen} from './src/screens/MenuScreen';
+import {RequestScreen} from './src/screens/RequestScreen';
 const Stack = createNativeStackNavigator();
 
 export function RootNavigation() {
@@ -27,7 +30,7 @@ export function RootNavigation() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{header: () => <></>}}
-          initialRouteName={STACKS.AUTH}>
+          initialRouteName={STACKS.APP}>
           <Stack.Screen name={STACKS.AUTH} component={AuthStack} />
           <Stack.Screen name={STACKS.APP} component={AppStack} />
         </Stack.Navigator>
@@ -56,8 +59,8 @@ function AppStack() {
       <Stack.Group screenOptions={{presentation: 'transparentModal'}}>
         <Stack.Screen name={STACKS.HomeTabs} component={HomeTabs} />
         <Stack.Screen name={SCREENS.Search} component={SearchModal} />
+        <Stack.Screen name={SCREENS.Profile} component={ProfileScreen} />
       </Stack.Group>
-      <Stack.Screen name={SCREENS.Profile} component={ProfileScreen} />
     </Stack.Navigator>
   );
 }
@@ -83,11 +86,25 @@ function HomeTabs() {
         component={HomeScreen}
       />
       <Tab.Screen
+        name={SCREENS.Requests}
+        options={{
+          tabBarIcon: () => <UsersIcon size={32} fill={COLORS.text} />,
+        }}
+        component={RequestScreen}
+      />
+      <Tab.Screen
         name={SCREENS.Notifications}
         options={{
-          tabBarIcon: () => <NotificationIcon fill={COLORS.text} />,
+          tabBarIcon: () => <NotificationIcon now={5} fill={COLORS.text} />,
         }}
         component={NotificationsScreen}
+      />
+      <Tab.Screen
+        name={SCREENS.Menu}
+        options={{
+          tabBarIcon: () => <MenuIcon fill={COLORS.text} />,
+        }}
+        component={MenuScreen}
       />
     </Tab.Navigator>
   );

@@ -1,36 +1,22 @@
 import React from 'react';
-import { Circle,Rect,Path,Svg,G, Line } from 'react-native-svg';
-export function MenuIcon({size = 40, fill = '#000', color=""}) {
+import { Path,Svg,G } from 'react-native-svg';
+export function MenuIcon({size = 48,fill ="#fff"}) {
   return (
     <Svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      fill={fill}
+    xmlns="http://www.w3.org/2000/svg"
+    fill={fill}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    id="menu"
+  >
+    <Path
+      d="M4.484 4a.5.5 0 0 0 .051 1h6.93a.5.5 0 1 0 0-1h-6.93a.5.5 0 0 0-.05 0zm0 3a.5.5 0 0 0 .051 1h6.93a.5.5 0 1 0 0-1h-6.93a.5.5 0 0 0-.05 0zm0 3a.5.5 0 0 0 .051 1h6.93a.5.5 0 1 0 0-1h-6.93a.5.5 0 0 0-.05 0z"
       fillRule="evenodd"
-      strokeLinejoin="round"
-      strokeMiterlimit="2"
-      clipRule="evenodd"
-      viewBox="0 0 64 64"
-      id="menu">
-      <G>
-        <Rect width={size} height={size} fill="none"></Rect>
-        <Circle cx="32" cy="32" r="26" fill="#3fc1c9"></Circle>
-        <Path
-          fill={color}
-          d="M180,754L204,754C205.104,754 206,753.104 206,752C206,750.896 205.104,750 204,750L180,750C178.896,750 178,750.896 178,752C178,753.104 178.896,754 180,754Z"
-          transform="translate(-160 -720)"></Path>
-        <Path
-          fill={color}
-          d="M180,754L204,754C205.104,754 206,753.104 206,752C206,750.896 205.104,750 204,750L180,750C178.896,750 178,750.896 178,752C178,753.104 178.896,754 180,754Z"
-          transform="translate(-160 -730)"></Path>
-        <Path
-          fill={color}
-          d="M180,754L204,754C205.104,754 206,753.104 206,752C206,750.896 205.104,750 204,750L180,750C178.896,750 178,750.896 178,752C178,753.104 178.896,754 180,754Z"
-          transform="translate(-160 -710)"></Path>
-      </G>
-    </Svg>
-  );
+      fill={fill}
+    />
+  </Svg>
+    )
 }
 
 

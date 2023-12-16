@@ -7,12 +7,17 @@ import {LockIcon} from '../../assets/LockIcon';
 import {COLORS} from '../constants/Theme';
 export function LoginScreen({navigation}) {
   return (
-    <Box paddingTop={'50%'} flex={1}>
+    <Box flex={1}>
       {/*  logo text */}
-      <Box alignItems="center" justifyContent="center">
-        <AppText fontSize={28} textTransform="uppercase" text="Advoco" />
+      <Box flex={1} alignItems="center" justifyContent="center">
+        <AppText
+          fontSize={28}
+          color={COLORS.text}
+          textTransform="uppercase"
+          text="Advoco"
+        />
       </Box>
-      <Box gap={12} paddingHorizontal={'3%'}>
+      <Box gap={12} flex={2} paddingHorizontal={'3%'}>
         <FormInput placeholder="User Name" icon={<UserIcon fill="#fff" />} />
         <FormInput
           placeholder="Password"
@@ -28,6 +33,7 @@ export function LoginScreen({navigation}) {
             borderRadius: 8,
           }}>
           <AppText
+            color={COLORS.text}
             fontSize={22}
             textAlign="center"
             fontWeight="700"
@@ -36,7 +42,11 @@ export function LoginScreen({navigation}) {
         </Pressable>
 
         <Box flexDirection="row" gap={5}>
-          <AppText fontSize={18} text="Already have an account ?" />
+          <AppText
+            fontSize={18}
+            color={COLORS.text}
+            text="Already have an account ?"
+          />
           <Pressable onPress={() => navigation.navigate(SCREENS.Signup)}>
             <AppText text="Signup" fontSize={18} color={COLORS.accent} />
           </Pressable>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet, TextStyle} from 'react-native';
+import {Text, StyleSheet, TextStyle, TextProps} from 'react-native';
 import {COLORS} from '../constants/Theme';
 
 interface AppText {
@@ -18,7 +18,7 @@ interface AppText {
     | '900';
   style?: TextStyle | TextStyle[];
 }
-type AppTextProps = TextStyle & AppText;
+type AppTextProps = TextStyle & AppText & TextProps;
 export const AppText: React.FC<AppTextProps> = ({
   text,
   fontWeight,
@@ -26,7 +26,7 @@ export const AppText: React.FC<AppTextProps> = ({
   fontSize,
   textAlign,
   textTransform,
-  color,
+  color = COLORS.text,
   padding,
   paddingBottom,
   paddingLeft,
@@ -38,9 +38,13 @@ export const AppText: React.FC<AppTextProps> = ({
   paddingHorizontal,
   paddingVertical,
   marginVertical,
+  ellipsizeMode,
+  numberOfLines,
 }) => {
   return (
     <Text
+      ellipsizeMode={ellipsizeMode}
+      numberOfLines={numberOfLines}
       style={[
         styles.defaultStyle,
         {

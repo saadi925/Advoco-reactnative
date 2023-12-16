@@ -40,6 +40,7 @@ export const Box: React.FC<AppBox> = ({
   gap,
   rowGap,
   columnGap,
+  marginTop,
 }) => {
   return (
     <View
@@ -59,6 +60,7 @@ export const Box: React.FC<AppBox> = ({
         flexWrap,
         alignContent,
         marginBottom,
+        marginTop,
         marginRight,
         marginLeft,
         marginVertical,
