@@ -19,6 +19,12 @@ export function SignupScreen({navigation}) {
         />
       </Box>
       <Box gap={8} flex={2} paddingHorizontal={'3%'}>
+        <AppText
+          fontSize={28}
+          textAlign="center"
+          color={COLORS.text}
+          text="Signup to Continue"
+        />
         <FormInput
           placeholder="User Name"
           icon={<UserIcon fill={COLORS.primary} />}

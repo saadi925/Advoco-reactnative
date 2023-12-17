@@ -3,7 +3,7 @@ import {Text, StyleSheet, TextStyle, TextProps} from 'react-native';
 import {COLORS} from '../constants/Theme';
 
 interface AppText {
-  text: string;
+  text: React.ReactNode;
   fontWeight?:
     | 'normal'
     | 'bold'
@@ -40,6 +40,7 @@ export const AppText: React.FC<AppTextProps> = ({
   marginVertical,
   ellipsizeMode,
   numberOfLines,
+  opacity,
 }) => {
   return (
     <Text
@@ -49,6 +50,7 @@ export const AppText: React.FC<AppTextProps> = ({
         styles.defaultStyle,
         {
           fontWeight,
+          opacity,
           fontSize,
           textAlign,
           textTransform,

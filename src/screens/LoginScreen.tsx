@@ -14,10 +14,17 @@ export function LoginScreen({navigation}) {
           fontSize={28}
           color={COLORS.text}
           textTransform="uppercase"
+          fontWeight="800"
           text="Advoco"
         />
       </Box>
       <Box gap={12} flex={2} paddingHorizontal={'3%'}>
+        <AppText
+          fontSize={28}
+          color={COLORS.text}
+          textAlign="center"
+          text="Login to Continue"
+        />
         <FormInput placeholder="User Name" icon={<UserIcon fill="#fff" />} />
         <FormInput
           placeholder="Password"

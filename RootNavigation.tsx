@@ -4,24 +4,23 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   HomeScreen,
   LoginScreen,
+  MenuScreen,
+  NotificationsScreen,
   ProfileScreen,
+  RequestScreen,
   SearchModal,
+  SettingsScreen,
   SignupScreen,
 } from './src/screens';
 import {SCREENS, STACKS} from './src/constants/Screens';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {Header} from './src/components/Header';
-import Rankings from './src/screens/Rankings';
-import {UserIcon, UsersIcon} from './assets/UserIcon';
+import {UsersIcon} from './assets/UserIcon';
 import {COLORS} from './src/constants/Theme';
 import {HomeIcon} from './assets/Home';
 import {NotificationIcon} from './assets/NotificationIcon';
-import NotificationsScreen from './src/screens/NotificationsScreen';
-import {LocationIcon} from './assets/Location';
 import {MenuIcon} from './assets/MenuIcon';
-import {MenuScreen} from './src/screens/MenuScreen';
-import {RequestScreen} from './src/screens/RequestScreen';
 const Stack = createNativeStackNavigator();
 
 export function RootNavigation() {
@@ -42,7 +41,7 @@ export function RootNavigation() {
 function AuthStack() {
   return (
     <Stack.Navigator
-      screenOptions={{header: () => <></>}}
+      screenOptions={{header: () => <></>, presentation: 'transparentModal'}}
       initialRouteName={SCREENS.Signup}>
       <Stack.Screen name={SCREENS.Login} component={LoginScreen} />
       <Stack.Screen name={SCREENS.Signup} component={SignupScreen} />
@@ -60,6 +59,7 @@ function AppStack() {
         <Stack.Screen name={STACKS.HomeTabs} component={HomeTabs} />
         <Stack.Screen name={SCREENS.Search} component={SearchModal} />
         <Stack.Screen name={SCREENS.Profile} component={ProfileScreen} />
+        <Stack.Screen name={SCREENS.Settings} component={SettingsScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

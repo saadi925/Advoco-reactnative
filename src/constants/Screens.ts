@@ -8,6 +8,7 @@ export const SCREENS = {
   Requests: 'Requests',
   Notifications: 'Notifications',
   Menu: 'menu',
+  Settings: 'Settings',
 };
 export const STACKS = {
   AUTH: 'Auth',
