@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Pressable} from 'react-native';
 import {AppText, Box, FormInput} from '../components';
 import {UserIcon} from '../../assets/UserIcon';
@@ -6,7 +6,13 @@ import {SCREENS} from '../constants/Screens';
 import {EyeIcon, LockIcon} from '../../assets/LockIcon';
 import {EmailIcon} from '../../assets/EmailIcon';
 import {COLORS} from '../constants/Theme';
+import {HideEyeIcon} from '../../assets/EyeIcon';
 export function SignupScreen({navigation}) {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
   return (
     <Box flex={1}>
       {/*  logo text */}
@@ -26,18 +32,29 @@ export function SignupScreen({navigation}) {
           text="Signup to Continue"
         />
         <FormInput
+          bgColor={COLORS.background}
           placeholder="User Name"
           icon={<UserIcon fill={COLORS.primary} />}
         />
         <FormInput
+          bgColor={COLORS.background}
           placeholder="Email"
           keyboardType="email-address"
           icon={<EmailIcon fill={COLORS.primary} />}
         />
         <FormInput
+          bgColor={COLORS.background}
           placeholder="Password"
-          secureTextEntry
-          icon={<EyeIcon fill={COLORS.primary} />}
+          secureTextEntry={!isPasswordVisible}
+          icon={
+            <Pressable onPress={togglePasswordVisibility}>
+              {!isPasswordVisible ? (
+                <HideEyeIcon fill={COLORS.primary} />
+              ) : (
+                <EyeIcon fill={COLORS.primary} />
+              )}
+            </Pressable>
+          }
         />
         {/*  Submit */}
         <Pressable

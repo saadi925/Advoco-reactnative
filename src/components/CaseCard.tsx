@@ -50,7 +50,13 @@ export function Card({item}: CardProps) {
   const formattedDate = formatDate(Case.date);
   const statusColor = CheckStatus(Case.status);
   return (
-    <Box marginBottom={18}>
+    <Box
+      marginBottom={18}
+      borderRadius={12}
+      padding={'4%'}
+      opacity={0.9}
+      borderColor={COLORS.primary}
+      borderWidth={1}>
       <Box flexDirection="row" justifyContent="space-between" width={'100%'}>
         <Box flexDirection="row">
           <UserAvatar isOnline />

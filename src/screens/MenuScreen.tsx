@@ -1,3 +1,4 @@
+import {BackIcon} from '../../assets';
 import {PaymentIcon} from '../../assets/PaymentIcon';
 import {SettingsIcon} from '../../assets/Settings';
 import {FbIcon, LinkedInIcon, TwitterIcon} from '../../assets/SocialIcons';
@@ -7,17 +8,26 @@ import {SCREENS} from '../constants/Screens';
 import {COLORS} from '../constants/Theme';
 import ScreenHeader from './ScreenHeader';
 import {Image, Pressable} from 'react-native';
-import {data} from '../../fake/data';
 import FastImage from 'react-native-fast-image';
 const tempUser = {
-  username: 'Saad Bukhari',
-  profileImg: data.profileImg,
+  username: 'Umer Suleiman',
 };
 export function MenuScreen(props) {
   const {user = tempUser, navigation} = props;
   return (
     <Box flex={1}>
-      <ScreenHeader heading="Menu" />
+      <Pressable
+        onPress={() => navigation.goBack()}
+        style={{flexDirection: 'row', alignItems: 'center', marginVertical: 2}}>
+        <BackIcon />
+        <AppText
+          text="Menu"
+          padding={4}
+          paddingHorizontal={12}
+          color={COLORS.accent}
+          fontSize={24}
+        />
+      </Pressable>
       <Box paddingHorizontal={'2%'}>
         {/* user profile icon start */}
         <Pressable onPress={() => navigation.navigate(SCREENS.Profile)}>
@@ -64,7 +74,7 @@ export function MenuScreen(props) {
             icon={<SettingsIcon />}
           />
           <LinkButton
-            handlePress={() => navigation.navigate(SCREENS.Notifications)}
+            handlePress={() => navigation.navigate(SCREENS.PaymentSettings)}
             name="Payment Method Settings"
             icon={<PaymentIcon />}
           />
@@ -90,6 +100,7 @@ export function MenuScreen(props) {
           </Box>
         </Box>
         <Pressable
+          onPress={() => navigation.navigate(SCREENS.Login)}
           style={{
             backgroundColor: COLORS.error,
             borderRadius: 8,

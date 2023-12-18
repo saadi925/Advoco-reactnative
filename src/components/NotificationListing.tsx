@@ -1,7 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native-gesture-handler';
 import {NotificationsCard} from './NorificationCard';
-import {data} from '../../fake/data';
 
 const tempNotifications = [
   {
@@ -20,7 +19,7 @@ const tempNotifications = [
   {
     user: {
       username: 'Ali Raza',
-      profileImg: './avatar2.jpg',
+      profileImg: '',
     },
     alert: {
       id: '3',
@@ -33,7 +32,7 @@ const tempNotifications = [
   {
     user: {
       username: 'Zainab Ahmed',
-      profileImg: './avatar3.jpg',
+      profileImg: '',
     },
     alert: {
       id: '4',
@@ -46,7 +45,7 @@ const tempNotifications = [
   {
     user: {
       username: 'Usman Ali',
-      profileImg: './avatar4.jpg',
+      profileImg: '',
     },
     alert: {
       id: '5',
@@ -59,7 +58,7 @@ const tempNotifications = [
   {
     user: {
       username: 'Ayesha Khan',
-      profileImg: './avatar5.jpg',
+      profileImg: '',
     },
     alert: {
       id: '6',

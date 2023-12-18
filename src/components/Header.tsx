@@ -7,6 +7,8 @@ import {NotificationIcon} from '../../assets/NotificationIcon';
 import {COLORS} from '../constants/Theme';
 import {SearchIcon} from '../../assets/Search';
 import {SCREENS} from '../constants/Screens';
+import {MenuIcon} from '../../assets';
+import {DashboardIcon} from '../../assets/MenuIcon';
 export const Header = ({navigation}) => {
   return (
     <Box
@@ -21,6 +23,12 @@ export const Header = ({navigation}) => {
         </Pressable>
         <Pressable onPress={() => console.log('menu')}>
           <ChatIcon fill={COLORS.icon} />
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate(SCREENS.Menu)}>
+          <Text>
+            {' '}
+            <DashboardIcon size={'32'} />
+          </Text>
         </Pressable>
       </Box>
     </Box>

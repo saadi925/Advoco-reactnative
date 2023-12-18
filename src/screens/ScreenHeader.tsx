@@ -6,6 +6,7 @@ export default function ScreenHeader({heading}: {heading: string}) {
   return (
     <AppText
       text={heading}
+      textAlign="center"
       fontWeight="800"
       color={COLORS.primary}
       fontSize={28}

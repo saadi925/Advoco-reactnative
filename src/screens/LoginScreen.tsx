@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Pressable} from 'react-native';
 import {AppText, Box, FormInput} from '../components';
 import {UserIcon} from '../../assets/UserIcon';
-import {SCREENS} from '../constants/Screens';
-import {LockIcon} from '../../assets/LockIcon';
+import {SCREENS, STACKS} from '../constants/Screens';
+import {EyeIcon, LockIcon} from '../../assets/LockIcon';
 import {COLORS} from '../constants/Theme';
+import {HideEyeIcon} from '../../assets/EyeIcon';
 export function LoginScreen({navigation}) {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
   return (
     <Box flex={1}>
       {/*  logo text */}
@@ -27,12 +33,22 @@ export function LoginScreen({navigation}) {
         />
         <FormInput placeholder="User Name" icon={<UserIcon fill="#fff" />} />
         <FormInput
+          bgColor={COLORS.background}
           placeholder="Password"
-          secureTextEntry
-          icon={<LockIcon fill="#fff" />}
+          secureTextEntry={!isPasswordVisible}
+          icon={
+            <Pressable onPress={togglePasswordVisibility}>
+              {!isPasswordVisible ? (
+                <HideEyeIcon fill={COLORS.primary} />
+              ) : (
+                <EyeIcon fill={COLORS.primary} />
+              )}
+            </Pressable>
+          }
         />
 
         <Pressable
+          onPress={() => navigation.navigate(STACKS.APP)}
           style={{
             paddingHorizontal: '5%',
             paddingVertical: '2%',

@@ -1,4 +1,4 @@
-import {Text} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import {AppText, Box, UserAvatar} from '.';
 import {LawyerCard} from './LawyerListing';
 import {COLORS} from '../constants/Theme';
@@ -27,7 +27,13 @@ export function LawyerCardItem({item}: {item: LawyerCard}) {
   const availability = Availability(user.status);
 
   return (
-    <Box marginBottom={'7%'}>
+    <Box
+      borderRadius={12}
+      padding={'4%'}
+      opacity={0.9}
+      borderColor={COLORS.primary}
+      borderWidth={1}
+      marginBottom={'7%'}>
       <Box
         flexDirection="row"
         alignItems="center"
@@ -76,6 +82,16 @@ export function LawyerCardItem({item}: {item: LawyerCard}) {
           {user.experience + ' ' + 'years'}
         </Text>
       </Box>
+      <TouchableOpacity
+        style={{
+          paddingVertical: '4%',
+          paddingHorizontal: '3%',
+          backgroundColor: COLORS.icon,
+          borderRadius: 8,
+        }}
+        onPress={() => console.log('req sent')}>
+        <AppText textAlign="center" text="Contact Me" />
+      </TouchableOpacity>
     </Box>
   );
 }

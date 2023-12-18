@@ -9,6 +9,7 @@ export const SCREENS = {
   Notifications: 'Notifications',
   Menu: 'menu',
   Settings: 'Settings',
+  PaymentSettings: 'PaymentSettings',
 };
 export const STACKS = {
   AUTH: 'Auth',

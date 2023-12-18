@@ -18,9 +18,9 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {Header} from './src/components/Header';
 import {UsersIcon} from './assets/UserIcon';
 import {COLORS} from './src/constants/Theme';
-import {HomeIcon} from './assets/Home';
-import {NotificationIcon} from './assets/NotificationIcon';
-import {MenuIcon} from './assets/MenuIcon';
+import {HomeIcon, MenuIcon, NotificationIcon} from './assets';
+import {PaymentScreen} from './src/screens/PaymentScreen';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
 
 export function RootNavigation() {
@@ -29,7 +29,7 @@ export function RootNavigation() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{header: () => <></>}}
-          initialRouteName={STACKS.APP}>
+          initialRouteName={STACKS.AUTH}>
           <Stack.Screen name={STACKS.AUTH} component={AuthStack} />
           <Stack.Screen name={STACKS.APP} component={AppStack} />
         </Stack.Navigator>
@@ -59,24 +59,29 @@ function AppStack() {
         <Stack.Screen name={STACKS.HomeTabs} component={HomeTabs} />
         <Stack.Screen name={SCREENS.Search} component={SearchModal} />
         <Stack.Screen name={SCREENS.Profile} component={ProfileScreen} />
+        <Stack.Screen name={SCREENS.Menu} component={MenuScreen} />
         <Stack.Screen name={SCREENS.Settings} component={SettingsScreen} />
+        <Stack.Screen
+          name={SCREENS.PaymentSettings}
+          component={PaymentScreen}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );
 }
 
 function HomeTabs() {
-  const Tab = createMaterialTopTabNavigator();
+  const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarActiveTintColor: COLORS.primary,
         tabBarStyle: {
           backgroundColor: COLORS.background,
           margin: 0,
           padding: 0,
         },
-        tabBarLabelStyle: {display: 'none'},
-        tabBarIndicatorStyle: {backgroundColor: COLORS.primary},
+        header: () => <></>,
       }}>
       <Tab.Screen
         name={SCREENS.Home}
@@ -98,13 +103,6 @@ function HomeTabs() {
           tabBarIcon: () => <NotificationIcon now={5} fill={COLORS.text} />,
         }}
         component={NotificationsScreen}
-      />
-      <Tab.Screen
-        name={SCREENS.Menu}
-        options={{
-          tabBarIcon: () => <MenuIcon fill={COLORS.text} />,
-        }}
-        component={MenuScreen}
       />
     </Tab.Navigator>
   );

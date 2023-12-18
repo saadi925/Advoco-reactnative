@@ -5,58 +5,7 @@ import {IUser} from '../components/NorificationCard';
 import {FlatList, Image, Pressable} from 'react-native';
 import {UserIcon} from '../../assets/UserIcon';
 import {COLORS} from '../constants/Theme';
-
-const tempRequests = [
-  {
-    id: '1',
-    user: {
-      username: 'John Doe',
-      profileImg: '',
-    },
-  },
-  {
-    id: '2',
-    user: {
-      username: 'John Doe',
-      profileImg: '',
-    },
-  },
-  {
-    id: '25',
-    user: {
-      username: 'John Doe',
-      profileImg: '',
-    },
-  },
-  {
-    id: '276',
-    user: {
-      username: 'John Doe',
-      profileImg: '',
-    },
-  },
-  {
-    id: '267',
-    user: {
-      username: 'John Doe',
-      profileImg: '',
-    },
-  },
-  {
-    id: '2560',
-    user: {
-      username: 'John Doe',
-      profileImg: '',
-    },
-  },
-  {
-    id: '256',
-    user: {
-      username: 'John Doe',
-      profileImg: '',
-    },
-  },
-];
+import {tempRequests} from '../../mockData/tempRequests';
 
 export function RequestScreen() {
   return (
@@ -102,7 +51,7 @@ export function RequestCard({item}: RequestCardProps) {
             text={user.username}
             color={COLORS.text}
           />
-          <AppText text="wants to connect with you" fontSize={16.3} />
+          <AppText text="wants to connect" fontSize={16.3} />
         </Box>
         <Box flexDirection="row" gap={14} paddingRight={7}>
           <Pressable
@@ -113,7 +62,7 @@ export function RequestCard({item}: RequestCardProps) {
 
               borderRadius: 8,
             }}>
-            <AppText fontWeight="700" text="Reject" />
+            <AppText fontWeight="700" text="Discard" />
           </Pressable>
           <Pressable
             style={{
@@ -122,7 +71,7 @@ export function RequestCard({item}: RequestCardProps) {
               paddingHorizontal: '5%',
               borderRadius: 8,
             }}>
-            <AppText fontWeight="700" text="Accept" />
+            <AppText fontWeight="700" text="Allow" />
           </Pressable>
         </Box>
       </Box>

@@ -3,7 +3,6 @@ import {Pressable} from 'react-native';
 import {AppText, Box} from '../components';
 import {COLORS} from '../constants/Theme';
 import {BackIcon} from '../../assets/Back';
-import {SCREENS} from '../constants/Screens';
 import {SearchInput} from '../components/SearchInput';
 
 export function SearchModal({navigation}) {
